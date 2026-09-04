@@ -39,18 +39,16 @@ For the current number, calculate the value required to reach the target:
 complement = target - current
 ```
 
-If that complement already exists in the HashMap, we have found the required pair.
+If that complement already exists in the HashMap, the required pair has been found.
 
 ### Steps
 
 1. Create a HashMap to store `value → index`.
 2. Traverse the array once.
-3. For the current element, calculate:
-   `complement = target - nums[i]`
-4. Check whether the complement exists in the HashMap.
+3. Calculate `complement = target - nums[i]`.
+4. Check whether the complement exists in the map.
 5. If it exists, return the stored index and current index.
-6. Otherwise, store the current value and its index.
-7. Continue until the pair is found.
+6. Otherwise, store the current value and index.
 
 ### Complexity
 
@@ -63,21 +61,70 @@ If that complement already exists in the HashMap, we have found the required pai
 
 ---
 
+## Approach 03 — Two Pointers
+
+### Idea
+
+Two Pointers works naturally on a sorted array.
+
+Because the problem requires the **original indices**, store each value together with its original index before sorting.
+
+Each pair contains:
+
+```text
+[value, originalIndex]
+```
+
+After sorting by value, use two pointers:
+
+* `left` starts at the beginning.
+* `right` starts at the end.
+
+Compare their sum with the target and move the appropriate pointer.
+
+### Steps
+
+1. Create a 2D array storing each value and its original index.
+2. Sort the pairs by value.
+3. Set `left = 0`.
+4. Set `right = n - 1`.
+5. Calculate the sum of the values at `left` and `right`.
+6. If the sum equals the target, return their original indices.
+7. If the sum is smaller than the target, move `left` forward.
+8. If the sum is larger than the target, move `right` backward.
+9. Continue until the pair is found.
+
+### Complexity
+
+* **Time:** O(n log n)
+* **Space:** O(n)
+
+### Status
+
+**Valid Alternative Approach**
+
+---
+
 ## Approach Comparison
 
-| Approach    |  Time | Space | Status      |
-| ----------- | ----: | ----: | ----------- |
-| Brute Force | O(n²) |  O(1) | Basic       |
-| HashMap     |  O(n) |  O(n) | **Optimal** |
+| Approach     |       Time | Space | Status      |
+| ------------ | ---------: | ----: | ----------- |
+| Brute Force  |      O(n²) |  O(1) | Basic       |
+| HashMap      |       O(n) |  O(n) | **Optimal** |
+| Two Pointers | O(n log n) |  O(n) | Alternative |
 
 ### Key Learning
 
-The main optimization is reducing repeated pair comparisons by using a HashMap for constant-average-time lookup.
+Two Pointers requires sorted data.
 
-The important formula is:
+When a problem asks for original indices, sorting the values directly loses their original positions. Store the value together with its original index before sorting.
+
+The pointer rule is:
 
 ```text
-current + complement = target
+sum < target → left++
 
-complement = target - current
+sum > target → right--
+
+sum == target → found
 ```
