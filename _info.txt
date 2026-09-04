@@ -60,3 +60,4 @@ Complexity
 
 Github commit:
 feat(dsa-<pattern>): add <approach> solution for <problem>
+feat(dsa-<pattern-no>-<pattern>): add P<problem-no>-<problem> - approach-<approach-no> <approach> solution
