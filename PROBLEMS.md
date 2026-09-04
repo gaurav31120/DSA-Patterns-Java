@@ -12,7 +12,8 @@ Pattern-based DSA problem solving in Java.
 
 ### Easy
 
-* [x] P001. Two Sum
+- [x] P001. Two Sum
+- [x] P002. Remove Duplicates
 
 ---
 

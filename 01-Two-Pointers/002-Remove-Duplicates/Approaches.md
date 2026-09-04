@@ -59,3 +59,64 @@ When a value is encountered for the first time, write it into the original array
 ✅ Completed
 
 This approach modifies the original array but uses O(n) extra space for the HashSet.
+
+# Approaches
+
+## Approach 01 — Extra Array
+
+### Idea
+
+Use an additional array to store unique elements.
+
+Since the input array is sorted, duplicate values are adjacent. Compare each element with the next element. If they are different, the next element is unique and is added to the result array.
+
+### Complexity
+
+- Time: O(n)
+- Space: O(n)
+
+### Status
+
+✅ Completed
+
+---
+
+## Approach 02 — HashSet
+
+### Idea
+
+Use a HashSet to keep track of values that have already been seen.
+
+When a value is encountered for the first time, write it into the original array at index `j`.
+
+### Complexity
+
+- Time: O(n)
+- Space: O(n)
+
+### Status
+
+✅ Completed
+
+---
+
+## Approach 03 — Two Pointers
+
+### Idea
+
+Because the array is sorted, duplicates are adjacent.
+
+Use two pointers:
+- `i` traverses the array.
+- `j` tracks the last unique element.
+
+When `arr[i]` differs from `arr[j]`, a new unique element is found. Place it at `j + 1` and move `j`.
+
+### Complexity
+
+- Time: O(n)
+- Space: O(1)
+
+### Status
+
+✅ Completed
