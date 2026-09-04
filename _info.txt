@@ -1,1 +1,58 @@
 Here, will solve DSA problems pattern wise with notes.
+
+DSA-Patterns-Java/
+│
+├── README.md
+├── PROBLEMS.md              ← overall tracker
+│
+├── 01-Arrays/
+│   └── 001-Problem/
+│       ├── Problem.md       ← problem statement
+│       ├── Approaches.md    ← approaches + complexity
+│       ├── 01-Brute-Force.java
+│       └── 02-Optimal.java
+│
+├── 02-Hashing/
+├── 03-Two-Pointers/
+├── ...
+└── 28-Mixed/
+
+
+-------------------------------------------------------------------
+
+PROBLEMS.md
+
+# DSA Problems
+
+Pattern-based DSA practice in Java.
+
+## Progress
+
+**Completed: 1 / 500**
+
+---
+
+# 01. Arrays
+
+### Easy
+
+- [x] 01. Problem Name
+
+----------------------------------------------------------------------
+
+Approaches.md
+
+Approach 1
+Idea
+Steps
+Complexity
+
+Approach 2
+Idea
+Steps
+Complexity
+
+Approach 3
+Idea
+Steps
+Complexity
