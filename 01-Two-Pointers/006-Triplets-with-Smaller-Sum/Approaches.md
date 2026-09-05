@@ -52,10 +52,9 @@ If:
 
 then because the array is sorted, every element between `left`
 and `right` will also produce a sum smaller than the target
-when paired with `arr[i]`.
+when paired with `arr[i]` and `arr[left]`.
 
-Therefore, we can count all of those triplets at once instead
-of checking them individually.
+Therefore, we can count all of those triplets at once.
 
 ### Steps
 
@@ -66,9 +65,10 @@ of checking them individually.
    - `left = i + 1`
    - `right = n - 1`
 5. While `left < right`:
-   - Calculate the current three-element sum.
-   - If the sum is smaller than the target:
-     - Count all valid triplets from `left` through `right`.
+   - Calculate:
+     `sum = arr[i] + arr[left] + arr[right]`
+   - If `sum < target`:
+     - Add `right - left` to the count.
      - Move `left` forward.
    - Otherwise:
      - Move `right` backward.
@@ -76,7 +76,7 @@ of checking them individually.
 
 ### Key Insight
 
-Suppose the sorted array is:
+Suppose:
 
 ```text
 [-2, 0, 1, 3]
