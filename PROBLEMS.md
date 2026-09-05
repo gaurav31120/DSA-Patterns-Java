@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 5 / 500+**
+**Completed: 6 / 500+**
 
 ---
 
@@ -13,3 +13,4 @@
 - [x] P003 — Squares of a Sorted Array
 - [x] P004 — Triplet Sum to Zero
 - [x] P005 — Triplets Sum Closest to Target
+- [x] P006 — Triplets with Smaller Sum
