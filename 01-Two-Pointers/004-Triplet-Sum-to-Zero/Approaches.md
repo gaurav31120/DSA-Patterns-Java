@@ -1,6 +1,6 @@
 # Approaches
 
-## Approach 01 — Brute Force
+## Approach 01 — Brute Force — Time: O(n³), Space: O(m)
 
 ### Idea
 
@@ -33,47 +33,50 @@ When a valid triplet is found:
 7. Add the triplet if it is not already present.
 8. Return the result.
 
-### Complexity
-
-- Time: O(n³)
-- Space: O(m), where `m` is the number of unique triplets stored
-
 ### Status
 
 ✅ Completed
 
 ---
 
-## Approach 02 — Sorting + Two Pointers
+## Approach 02 — Sorting + Two Pointers — Time: O(n²), Space: O(m)
 
 ### Idea
 
 Sort the array first.
 
-Fix one element using index `i`, then use two pointers to find
-two additional elements whose sum is equal to `-arr[i]`.
+Then fix one element using index `i` and use two pointers
+(`left` and `right`) to find two additional elements whose sum
+equals `-arr[i]`.
 
-### Complexity
+Because the array is sorted:
 
-- Time: O(n²)
-- Space: O(m), excluding the output list
+- If the sum is too small, move `left` forward.
+- If the sum is too large, move `right` backward.
+- If the sum is zero, store the triplet and move both pointers.
 
-### Status
+Duplicate values are skipped to ensure that only unique triplets
+are returned.
 
-⏳ Pending
+### Steps
 
----
+1. Sort the array.
+2. Iterate `i` from `0` to `n - 3`.
+3. Skip duplicate values of `arr[i]`.
+4. Set `left = i + 1`.
+5. Set `right = n - 1`.
+6. While `left < right`:
+   - Calculate the sum of `arr[i]`, `arr[left]`, and `arr[right]`.
+   - If sum is `0`, store the triplet.
+   - If sum is less than `0`, increment `left`.
+   - If sum is greater than `0`, decrement `right`.
+7. After finding a valid triplet, skip duplicate `left` values.
+8. Skip duplicate `right` values.
+9. Return the result.
 
-# Approach Comparison
+### Why Two Pointers Work
 
-| Approach | Time | Space | Key Idea |
-|----------|------|-------|----------|
-| Brute Force | O(n³) | O(m) | Check every combination of 3 elements |
-| Sorting + Two Pointers | O(n²) | O(m) | Fix one element and search the remaining array with two pointers |
+After sorting:
 
-## ⭐ Best Approach
-
-**Approach 02 — Sorting + Two Pointers**
-
-It reduces the search from O(n³) to O(n²) by using the sorted
-property of the array and two pointers.
+```text
+[-4, -1, -1, 0, 1, 2]
