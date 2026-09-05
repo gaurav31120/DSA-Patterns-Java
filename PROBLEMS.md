@@ -4,7 +4,7 @@ Pattern-based DSA problem solving in Java.
 
 ## Progress
 
-**Completed: 1 / 500+**
+**Completed: 3 / 500+**
 
 ---
 
@@ -14,6 +14,7 @@ Pattern-based DSA problem solving in Java.
 
 - [x] P001. Two Sum
 - [x] P002. Remove Duplicates
+- [x] P003. Squares of a Sorted Array
 
 ---
 
