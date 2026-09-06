@@ -67,3 +67,52 @@ elements must be `2`.
 ### Status
 
 ✅ Completed
+
+## Approach 03 — Dutch National Flag / Three Pointers — Time: O(n), Space: O(1)
+
+### Idea
+
+Use three pointers to divide the array into four regions:
+
+```text
+[ 0s ][ 1s ][ Unknown ][ 2s ]
+       ↑      ↑         ↑
+      left    i        right
+```
+
+The pointer `i` processes the unknown region.
+
+### Steps
+
+1. Initialize `left = 0`, `i = 0`, and `right = n - 1`.
+2. If `arr[i] == 0`, swap it with `arr[left]`, then increment
+   `left` and `i`.
+3. If `arr[i] == 1`, it is already in the correct region, so
+   increment `i`.
+4. If `arr[i] == 2`, swap it with `arr[right]` and decrement
+   `right`.
+5. Do not increment `i` when processing `2`, because the element
+   swapped from the right is still unknown.
+6. Continue while `i <= right`.
+
+### Why It Works
+
+At every step:
+
+* Elements before `left` are `0`.
+* Elements between `left` and `i - 1` are `1`.
+* Elements after `right` are `2`.
+* Elements from `i` to `right` are still unknown.
+
+The algorithm keeps shrinking the unknown region until every element
+is placed in its correct region.
+
+### Complexity
+
+* **Time:** O(n)
+* **Space:** O(1)
+
+### Status
+
+✅ Completed
+
