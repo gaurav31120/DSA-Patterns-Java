@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 7 / 500+**
+**Completed: 8 / 500+**
 
 ---
 
@@ -15,3 +15,7 @@
 - [x] P005 — Triplets Sum Closest to Target ✅ DONE
 - [x] P006 — Triplets with Smaller Sum ✅ DONE
 - [x] P007 — Dutch National Flag ✅ DONE
+
+## 03 — Fast & Slow Pointers
+
+* [x] P001 — Linked List Cycle ✅ DONE
