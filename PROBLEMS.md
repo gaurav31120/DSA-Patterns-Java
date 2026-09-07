@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 8 / 500+**
+**Completed: 9 / 500+**
 
 ---
 
@@ -19,3 +19,4 @@
 ## 03 — Fast & Slow Pointers
 
 * [x] P001 — Linked List Cycle ✅ DONE
+- [x] P002 — Start of Linked List Cycle — LeetCode #142 ✅ DONE
