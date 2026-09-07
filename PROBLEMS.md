@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 10 / 500+**
+**Completed: 11 / 500+**
 
 ---
 
@@ -18,6 +18,7 @@
 
 ## 03 — Fast & Slow Pointers
 
-* [x] P001 — Linked List Cycle ✅ DONE
+- [x] P001 — Linked List Cycle — LeetCode #141 ✅ DONE
 - [x] P002 — Start of Linked List Cycle — LeetCode #142 ✅ DONE
 - [x] P003 — Middle of the Linked List — LeetCode #876 ✅ DONE
+- [x] P004 — Find Duplicate Number — LeetCode #287 ✅ DONE
