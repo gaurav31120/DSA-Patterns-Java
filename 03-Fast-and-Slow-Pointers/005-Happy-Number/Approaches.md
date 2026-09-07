@@ -60,3 +60,35 @@ Where `k` is the number of generated states.
 ### Status
 
 ✅ Completed
+
+## Approach 03 — Fast & Slow Pointers — Time: O(k), Space: O(1)
+
+### Idea
+
+Treat every generated number as a node in a sequence.
+
+Use Floyd's Fast & Slow Pointers to detect whether the sequence enters a cycle.
+
+- `slow` moves one step.
+- `fast` moves two steps.
+- If they meet at `1`, the number is happy.
+- If they meet somewhere else, the number is unhappy.
+
+### Steps
+
+1. Start `slow` and `fast` at `num`.
+2. Move `slow` one transformation.
+3. Move `fast` two transformations.
+4. Continue until both pointers meet.
+5. Return `true` if the meeting point is `1`.
+
+### Complexity
+
+- **Time:** O(k)
+- **Space:** O(1)
+
+Where `k` is the number of generated states.
+
+### Status
+
+✅ Completed
