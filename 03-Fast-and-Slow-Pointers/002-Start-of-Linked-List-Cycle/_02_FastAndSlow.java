@@ -37,6 +37,28 @@ public class _02_FastAndSlow {
 
         return slow;
     }
+
+    public static void main(String[] args) {
+
+        Node head = new Node(1);
+
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        head.next.next.next.next.next = new Node(6);
+
+        // Create cycle: 6 -> 3
+        head.next.next.next.next.next.next = head.next.next;
+
+        Node loopNode = startOfLL(head);
+
+        if (loopNode != null) {
+            System.out.println("Cycle starts at: " + loopNode.data);
+        } else {
+            System.out.println("No cycle");
+        }
+    }
 }
 
 class Node {
