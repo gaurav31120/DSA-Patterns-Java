@@ -63,3 +63,44 @@ problem's requirement of not modifying the array.
 ### Status
 
 ⚠️ Conceptual / Skip
+
+## Approach 03 — Fast & Slow Pointers — Time: O(n), Space: O(1)
+
+### Idea
+
+Treat the array like a linked list where `arr[i]` is the next position.
+
+The duplicate creates a cycle.
+
+Use Fast & Slow Pointers to find the cycle and its starting point.
+
+### Steps
+
+#### Phase 1 — Find Meeting Point
+
+1. Start `slow` and `fast` at `arr[0]`.
+2. Move `slow` one step.
+3. Move `fast` two steps.
+4. Continue until they meet.
+
+#### Phase 2 — Find Cycle Start
+
+1. Reset `slow` to `arr[0]`.
+2. Move both pointers one step at a time.
+3. When they meet, that value is the duplicate.
+
+### Why It Works
+
+The duplicate creates a cycle in the array's index path.
+
+Floyd's algorithm finds the cycle and then identifies its starting point,
+which is the duplicate number.
+
+### Complexity
+
+- **Time:** O(n)
+- **Space:** O(1)
+
+### Status
+
+✅ Completed
