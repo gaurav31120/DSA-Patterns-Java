@@ -34,3 +34,43 @@ the second middle node, which is exactly what the problem requires.
 ### Status
 
 ✅ Completed
+
+## Approach 02 — Fast & Slow Pointers — Time: O(n), Space: O(1)
+
+### Idea
+
+Use two pointers that move through the linked list at different speeds.
+
+- `slow` moves one step at a time.
+- `fast` moves two steps at a time.
+
+When `fast` reaches the end of the list, `slow` will be at the middle.
+
+For an even-length list, `slow` reaches the second middle node.
+
+### Steps
+
+1. Initialize `slow` and `fast` at `head`.
+2. Move `slow` one step.
+3. Move `fast` two steps.
+4. Continue while `fast` and `fast.next` are not `null`.
+5. When the loop ends, return `slow`.
+
+### Why It Works
+
+The fast pointer moves twice as quickly as the slow pointer.
+
+Therefore, when `fast` reaches the end, `slow` has traveled approximately
+half the distance.
+
+For an even-length list, the loop condition causes `slow` to stop at the
+second middle node.
+
+### Complexity
+
+- **Time:** O(n)
+- **Space:** O(1)
+
+### Status
+
+✅ Completed
