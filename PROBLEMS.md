@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 9 / 500+**
+**Completed: 10 / 500+**
 
 ---
 
@@ -20,3 +20,4 @@
 
 * [x] P001 — Linked List Cycle ✅ DONE
 - [x] P002 — Start of Linked List Cycle — LeetCode #142 ✅ DONE
+- [x] P003 — Middle of the Linked List — LeetCode #876 ✅ DONE
