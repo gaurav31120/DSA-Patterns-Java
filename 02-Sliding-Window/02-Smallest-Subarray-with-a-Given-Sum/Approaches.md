@@ -33,3 +33,47 @@ adding more elements can only make the window larger.
 ### Status
 
 ✅ Completed
+
+## Approach 02 — Sliding Window — Time: O(n), Space: O(1)
+
+### Idea
+
+Use a variable-size sliding window.
+
+Expand the window using `right` until the sum becomes greater than
+or equal to the target.
+
+Then shrink the window from the left while it remains valid to find
+the smallest possible length.
+
+### Steps
+
+1. Start `left = 0` and `sum = 0`.
+2. Move `right` through the array.
+3. Add `arr[right]` to the sum.
+4. When `sum >= target`, calculate the window length.
+5. Update the minimum length.
+6. Remove `arr[left]` and move `left`.
+7. Keep shrinking while the window is valid.
+8. Return `0` if no valid subarray exists.
+
+### Why It Works
+
+All array elements are positive.
+
+Therefore:
+
+- Expanding the window increases the sum.
+- Shrinking the window decreases the sum.
+
+Once the target is reached, we can safely shrink from the left and
+find the smallest valid window.
+
+### Complexity
+
+- **Time:** O(n)
+- **Space:** O(1)
+
+### Status
+
+✅ Completed

@@ -6,20 +6,27 @@ public class _02_SlidingWindow {
 
     static int maxSumSubarray(int[] arr, int k) {
 
-        int sum = 0;
+        int low = 0;
+        int high = k - 1;
+        int n = arr.length;
 
-        // Calculate the first window.
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        // Calculate the first window sum.
         for (int i = 0; i < k; i++) {
             sum += arr[i];
         }
 
-        int maxSum = sum;
+        maxSum = sum;
 
-        // Slide the window one position at a time.
-        for (int i = k; i < arr.length; i++) {
+        // Slide the window.
+        while (high < n - 1) {
 
-            // Remove outgoing and add incoming element.
-            sum = sum - arr[i - k] + arr[i];
+            low++;
+            high++;
+
+            sum = sum - arr[low - 1] + arr[high];
 
             if (sum > maxSum) {
                 maxSum = sum;
