@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 13 / 500+**
+**Completed: 14 / 500+**
 
 ---
 
@@ -19,6 +19,7 @@
 ## 02 — Sliding Window
 
 - [x] P001 — Maximum Sum Subarray of Size K — ✅ DONE
+- [x] P002 — Smallest Subarray with a Given Sum — ✅ DONE
 
 ## 03 — Fast & Slow Pointers
 
