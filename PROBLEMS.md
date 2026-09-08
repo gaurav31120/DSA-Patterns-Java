@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 12 / 500+**
+**Completed: 13 / 500+**
 
 ---
 
@@ -15,6 +15,10 @@
 - [x] P005 — Triplets Sum Closest to Target ✅ DONE
 - [x] P006 — Triplets with Smaller Sum ✅ DONE
 - [x] P007 — Dutch National Flag ✅ DONE
+
+## 02 — Sliding Window
+
+- [x] P001 — Maximum Sum Subarray of Size K — ✅ DONE
 
 ## 03 — Fast & Slow Pointers
 
