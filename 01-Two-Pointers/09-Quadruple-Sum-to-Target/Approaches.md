@@ -68,3 +68,56 @@ seen.
 ### Status
 
 ✅ Completed — Seen
+
+## Approach 03 — Sorting + Two Pointers — Time: O(n³), Space: O(1) auxiliary space excluding output
+
+### Idea
+
+Sort the array first.
+
+Fix the first two elements using two loops, then use two pointers to
+find the remaining two elements.
+
+Because the array is sorted:
+
+- If the sum is smaller than the target, move `left`.
+- If the sum is larger than the target, move `right`.
+- If the sum equals the target, store the quadruplet and move both
+  pointers.
+
+Skip duplicate values to ensure unique quadruplets.
+
+### Steps
+
+1. Sort the array.
+2. Fix the first element using `i`.
+3. Skip duplicate `i` values.
+4. Fix the second element using `j`.
+5. Skip duplicate `j` values.
+6. Set `left = j + 1` and `right = n - 1`.
+7. Calculate the four-element sum.
+8. If `sum < target`, move `left`.
+9. If `sum > target`, move `right`.
+10. If `sum == target`, store the quadruplet.
+11. Move both pointers and skip duplicates.
+12. Continue until all possibilities are checked.
+
+### Why It Works
+
+After sorting, moving `left` increases the sum and moving `right`
+decreases the sum.
+
+This lets us find the required pair efficiently instead of using
+another nested loop.
+
+Duplicate values are skipped at every pointer level so that the result
+contains only unique quadruplets.
+
+### Complexity
+
+- **Time:** O(n³)
+- **Space:** O(1) auxiliary space excluding the returned result.
+
+### Status
+
+✅ Completed — Hint 2
