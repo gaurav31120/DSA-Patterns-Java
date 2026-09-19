@@ -23,3 +23,40 @@ indices.
 ### Status
 
 ✅ Completed — Solved
+
+## Approach 02 — HashMap — Time: O(n), Space: O(n)
+
+### Idea
+
+For each element, calculate the complement required to reach the target.
+
+Store previously seen values in a `HashMap` along with their indices.
+
+If the complement is already present, the required pair has been found.
+
+### Steps
+
+1. Create a `HashMap` of value → index.
+2. Traverse the array.
+3. Calculate `complement = target - arr[i]`.
+4. Check whether the complement exists in the map.
+5. If it exists, return both 1-based indices.
+6. Otherwise, store the current value and index.
+7. Return `[-1, -1]` if no pair is found.
+
+### Why It Works
+
+For every current value, we know exactly which value is required to
+reach the target.
+
+The `HashMap` lets us check whether that value has already appeared in
+constant average time.
+
+### Complexity
+
+- **Time:** O(n)
+- **Space:** O(n)
+
+### Status
+
+✅ Completed — Solved
