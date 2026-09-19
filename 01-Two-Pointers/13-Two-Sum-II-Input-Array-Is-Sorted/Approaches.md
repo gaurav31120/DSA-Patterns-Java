@@ -60,3 +60,42 @@ constant average time.
 ### Status
 
 ✅ Completed — Solved
+
+## Approach 03 — Two Pointers — Time: O(n), Space: O(1)
+
+### Idea
+
+Use two pointers because the array is already sorted.
+
+Start one pointer at the beginning and the other at the end.
+
+Compare their sum with the target and move the appropriate pointer.
+
+### Steps
+
+1. Set `left = 0`.
+2. Set `right = n - 1`.
+3. Calculate `arr[left] + arr[right]`.
+4. If the sum equals the target, return the 1-based indices.
+5. If the sum is smaller than the target, move `left` forward.
+6. If the sum is larger than the target, move `right` backward.
+7. Continue until the pair is found.
+
+### Why It Works
+
+Because the array is sorted:
+
+- Moving `left` forward increases the sum.
+- Moving `right` backward decreases the sum.
+
+Therefore, each pointer only moves forward or backward once through
+the array, giving a linear-time solution.
+
+### Complexity
+
+- **Time:** O(n)
+- **Space:** O(1)
+
+### Status
+
+✅ Completed — Solved
