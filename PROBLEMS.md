@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 14 / 500+**
+**Completed: 15 / 500+**
 
 ---
 
@@ -15,6 +15,7 @@
 - [x] P005 — Triplets Sum Closest to Target ✅ DONE
 - [x] P006 — Triplets with Smaller Sum ✅ DONE
 - [x] P007 — Dutch National Flag ✅ DONE
+- [x] P008 — LeetCode #713 — Subarrays with Product Less than a Target — ✅ DONE
 
 ## 02 — Sliding Window
 
