@@ -35,3 +35,36 @@ duplicate quadruplets to be detected.
 ### Status
 
 ✅ Completed — Solved
+
+## Approach 02 — HashSet + Three Loops — Time: O(n³), Space: O(n) auxiliary space excluding output
+
+### Idea
+
+Fix the first two elements and use a third loop to examine the remaining
+elements.
+
+For the current `arr[k]`, calculate the fourth value required to reach
+the target.
+
+Use a `HashSet` to check whether that required value has already been
+seen.
+
+### Steps
+
+1. Fix the first index `i`.
+2. Fix the second index `j`.
+3. Create an empty `HashSet` for the current pair.
+4. Move `k` from `j + 1` to the end.
+5. Calculate the required fourth value.
+6. Check whether the required value exists in the set.
+7. Create and store the quadruplet when found.
+8. Add `arr[k]` to the set.
+
+### Complexity
+
+- **Time:** O(n³)
+- **Space:** O(n) auxiliary space excluding output.
+
+### Status
+
+✅ Completed — Seen
