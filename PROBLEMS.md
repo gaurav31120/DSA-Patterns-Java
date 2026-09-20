@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 20  / 500+**
+**Completed: 21  / 500+**
 
 ---
 
@@ -21,6 +21,7 @@
 - [x] P014 — LeetCode #11 — Container With Most Water — ✅ DONE
 - [x] P015 — LeetCode #42 — Trapping Rain Water — ✅ DONE
 - [x] P016 — LeetCode #27 — Remove Element — ✅ DONE
+- [x] P017 — LeetCode #392 — Is Subsequence — ✅ DONE
 
 ## 02 — Sliding Window
 
