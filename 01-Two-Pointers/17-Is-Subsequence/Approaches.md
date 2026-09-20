@@ -111,36 +111,64 @@ Therefore:
 
 Use two pointers:
 
-- One pointer moves through `s`.
-- One pointer moves through `t`.
+- `i` points to the current character in `s`.
+- `j` points to the current character in `t`.
 
-Whenever the characters match, move both pointers.
+We scan `t` from left to right.
 
-When they do not match, move only the pointer for `t`.
+When:
+
+    s.charAt(i) == t.charAt(j)
+
+we have successfully matched one character of `s`, so:
+
+    i++
+
+Regardless of whether the characters match, we move through `t`:
+
+    j++
+
+At the end, if all characters of `s` were matched, then `s` is a subsequence of `t`.
+
+## Steps
+
+1. Initialize `i = 0`.
+2. Initialize `j = 0`.
+3. Continue while both strings still have characters to inspect.
+4. If `s[i] == t[j]`, increment `i`.
+5. Always increment `j`.
+6. Return `true` when `i == s.length()`.
 
 ## Key Logic
 
     s[i] == t[j]
         ↓
-    i++
-    j++
+      i++
 
-    s[i] != t[j]
-        ↓
-    j++
+    Always:
+      j++
 
-If all characters of `s` are matched, return `true`.
+## Example
+
+    s = "abc"
+    t = "ahbgdc"
+
+Compare:
+
+    a == a  → match → i++
+    b != h  → skip t
+    b == b  → match → i++
+    c != g  → skip t
+    c != d  → skip t
+    c == c  → match → i++
+
+All characters of `s` are matched.
+
+Therefore:
+
+    true
 
 ## Complexity
 
     Time: O(n + m)
     Space: O(1)
-
----
-
-# Summary
-
-| Approach | Time | Space | Priority | Status |
-|---|---:|---:|---|---|
-| Nested Loops / Searching Forward | O(n × m) | O(1) | OPTIONAL | Solved |
-| Two Pointers | O(n + m) | O(1) | MUST MASTER 🔥 | Solved |
