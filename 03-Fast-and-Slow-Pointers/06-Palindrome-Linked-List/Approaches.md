@@ -1,69 +1,207 @@
-/*
- * P006 — Palindrome Linked List
- * LeetCode #234
- * Approach 01 — ArrayList
- *
- * Time Complexity: O(n)
- * Space Complexity: O(n)
- */
+# P006 — Palindrome Linked List
 
-import java.util.ArrayList;
-import java.util.List;
+**LeetCode:** #234  
+**Pattern:** Fast & Slow Pointers  
+**Difficulty:** Medium
 
-public class _01_ArrayList {
+---
 
-    static boolean palindrome(Node head) {
+# Approaches
 
-        List<Integer> list = new ArrayList<>();
+We have **3 meaningful approaches**:
 
-        Node curr = head;
+| Approach | Technique | Time | Space | Status | Priority |
+|---|---|---:|---:|---|---|
+| Approach 01 | ArrayList | O(n) | O(n) | Solved | OPTIONAL |
+| Approach 02 | Stack | O(n) | O(n) | Parked | OPTIONAL |
+| Approach 03 | Fast & Slow + Reverse Second Half | O(n) | O(1) | Solved | MUST MASTER 🔥 |
 
-        // Store all linked list values.
-        while (curr != null) {
-            list.add(curr.data);
-            curr = curr.next;
-        }
+---
 
-        int left = 0;
-        int right = list.size() - 1;
+# Approach 01 — ArrayList
 
-        // Compare values from both ends.
-        while (left < right) {
+- **Status:** Solved
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(n)
+- **Priority:** OPTIONAL
 
-            if (list.get(left).equals(list.get(right))) {
-                left++;
-                right--;
-            } else {
-                return false;
-            }
-        }
+## Idea
 
-        return true;
-    }
+A singly linked list cannot be traversed backward easily.
 
-    public static void main(String[] args) {
+So, store all node values in an `ArrayList`.
 
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(2);
-        head.next.next.next = new Node(1);
+Then use two pointers:
 
-        boolean isPalindrome = palindrome(head);
+    left = 0
+    right = list.size() - 1
 
-        System.out.println("Is palindrome: " + isPalindrome);
+Compare values from both ends.
 
-        // Output:
-        // Is palindrome: true
-    }
-}
+If any pair is different, the linked list is not a palindrome.
 
-class Node {
+## Steps
 
-    int data;
-    Node next;
+1. Traverse the linked list.
+2. Store every node value in an `ArrayList`.
+3. Initialize `left` and `right`.
+4. Compare values at both positions.
+5. If they differ, return `false`.
+6. Move `left` forward and `right` backward.
+7. Continue until the pointers meet.
+8. Return `true`.
 
-    Node(int val) {
-        this.data = val;
-        this.next = null;
-    }
-}
+## Example
+
+    Linked List:
+    1 → 2 → 2 → 1
+
+    ArrayList:
+    [1, 2, 2, 1]
+
+Compare:
+
+    1 == 1 ✅
+    2 == 2 ✅
+
+Result:
+
+    true
+
+## Important Point
+
+When comparing `Integer` values stored in the `ArrayList`, use:
+
+    list.get(left).equals(list.get(right))
+
+rather than `==`.
+
+## Complexity
+
+    Time: O(n)
+    Space: O(n)
+
+---
+
+# Approach 02 — Stack
+
+- **Status:** Parked
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(n)
+- **Priority:** OPTIONAL
+
+## Idea
+
+A stack follows **Last In, First Out (LIFO)**.
+
+Store the linked-list values in a stack.
+
+Then compare the original linked-list values with values popped from the stack.
+
+Because the stack returns values in reverse order, it can be used to check whether the linked list reads the same forward and backward.
+
+## Steps
+
+1. Traverse the linked list.
+2. Push every node value onto the stack.
+3. Traverse the linked list again.
+4. Compare each node value with the value popped from the stack.
+5. If any value differs, return `false`.
+6. If all values match, return `true`.
+
+## Complexity
+
+    Time: O(n)
+    Space: O(n)
+
+## Note
+
+This approach is parked for now because Stack has not been studied yet.
+
+---
+
+# Approach 03 — Fast & Slow + Reverse Second Half
+
+- **Status:** Solved
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(1)
+- **Priority:** MUST MASTER 🔥
+
+## Idea
+
+A palindrome has matching values from both ends.
+
+For a linked list, we can:
+
+1. Find the middle using Fast & Slow Pointers.
+2. Reverse the second half of the linked list.
+3. Compare the first half with the reversed second half.
+
+This achieves constant extra space.
+
+## Step 1 — Find the Middle
+
+Use:
+
+    slow
+    fast
+
+Move:
+
+    slow → 1 step
+    fast → 2 steps
+
+When `fast` reaches the end, `slow` is around the middle.
+
+## Step 2 — Reverse the Second Half
+
+For:
+
+    1 → 2 → 2 → 1
+
+split conceptually:
+
+    1 → 2 | 2 → 1
+
+Reverse the second half:
+
+    1 → 2 | 1 → 2
+
+## Step 3 — Compare Both Halves
+
+Compare:
+
+    First half:
+    1 → 2
+
+    Reversed second half:
+    1 → 2
+
+Every corresponding value matches.
+
+Therefore:
+
+    true
+
+## Important Edge Cases
+
+- Empty linked list → `true`
+- Single node → `true`
+- Even-length palindrome → `true`
+- Odd-length palindrome → `true`
+- Non-palindrome → `false`
+
+## Key Pattern
+
+    Fast & Slow Pointers
+            ↓
+       Find middle
+            ↓
+      Reverse second half
+            ↓
+        Compare halves
+
+## Complexity
+
+    Time: O(n)
+    Space: O(1)
