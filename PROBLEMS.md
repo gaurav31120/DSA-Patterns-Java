@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 18 / 500+**
+**Completed: 19  / 500+**
 
 ---
 
@@ -19,6 +19,7 @@
 - [x] P009 — LeetCode #18 — Quadruple Sum to Target — ✅ DONE
 - [x] P013 — LeetCode #167 — Two Sum II - Input Array Is Sorted — ✅ DONE
 - [x] P014 — LeetCode #11 — Container With Most Water — ✅ DONE
+- [x] P015 — LeetCode #42 — Trapping Rain Water — ✅ DONE
 
 ## 02 — Sliding Window
 
