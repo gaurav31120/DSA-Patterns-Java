@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 19  / 500+**
+**Completed: 20  / 500+**
 
 ---
 
@@ -20,6 +20,7 @@
 - [x] P013 — LeetCode #167 — Two Sum II - Input Array Is Sorted — ✅ DONE
 - [x] P014 — LeetCode #11 — Container With Most Water — ✅ DONE
 - [x] P015 — LeetCode #42 — Trapping Rain Water — ✅ DONE
+- [x] P016 — LeetCode #27 — Remove Element — ✅ DONE
 
 ## 02 — Sliding Window
 
