@@ -71,7 +71,7 @@ Valid portion:
 
     Time: O(n²)
     Space: O(1)
-    
+
 
 # Approach 02 — Extra Array
 
@@ -132,3 +132,53 @@ Only the first `k` elements matter after the operation.
 
     Time: O(n)
     Space: O(n)
+
+# Approach 03 — Two Pointers / Swap
+
+- **Status:** Solved
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(1)
+- **Priority:** MUST MASTER 🔥
+
+## Idea
+
+Use two pointers:
+
+- `left` starts from the beginning.
+- `right` starts from the end.
+
+The `left` pointer scans the array.
+
+When `arr[left] == val`, that element should be removed.
+
+Instead of shifting elements, replace it with the element at `right` and reduce `right`.
+
+When `arr[left] != val`, the element is valid, so move `left` forward and increase `k`.
+
+Because the problem allows the order of remaining elements to change, swapping with the end is valid.
+
+## Steps
+
+1. Set `left = 0`.
+2. Set `right = arr.length - 1`.
+3. Set `k = 0`.
+4. While `left <= right`:
+   - If `arr[left] == val`, swap it with `arr[right]` and decrement `right`.
+   - Otherwise, the current element is valid. Increment `left` and `k`.
+5. Return `k`.
+
+## Key Logic
+
+```text
+arr[left] == val
+        ↓
+Swap with arr[right]
+        ↓
+right--
+
+arr[left] != val
+        ↓
+Keep the element
+        ↓
+left++
+k++
