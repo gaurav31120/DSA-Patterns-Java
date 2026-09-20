@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 21  / 500+**
+**Completed: 22 / 500+**
 
 ---
 
@@ -35,3 +35,4 @@
 - [x] P003 — LeetCode #876 — Middle of the Linked List — ✅ DONE
 - [x] P004 — LeetCode #287 — Find Duplicate Number — ✅ DONE
 - [x] P005 — LeetCode #202 — Happy Number — ✅ DONE
+- [x] P006 — LeetCode #234 — Palindrome Linked List — ✅ DONE
