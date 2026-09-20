@@ -47,3 +47,51 @@ Using indices `1` and `8`:
 ### Status
 
 ✅ Completed — Solved
+
+## Approach 02 — Two Pointers — Time: O(n), Space: O(1)
+
+### Idea
+
+Start with the widest possible container using one pointer at the
+beginning and one pointer at the end.
+
+Calculate the area and then move the pointer pointing to the shorter
+line.
+
+### Steps
+
+1. Set `left = 0`.
+2. Set `right = n - 1`.
+3. Calculate the width.
+4. Calculate the smaller height.
+5. Calculate the area.
+6. Update the maximum area.
+7. Move the shorter pointer.
+8. Continue until `left >= right`.
+
+### Formula
+
+    width = right - left
+
+    height = min(arr[left], arr[right])
+
+    area = width × height
+
+### Why It Works
+
+The current area is limited by the shorter line.
+
+When moving inward, the width always decreases. Therefore, moving the
+longer line cannot improve the area while the shorter line remains the
+limiting height.
+
+So we move the shorter line in an attempt to find a taller boundary.
+
+### Complexity
+
+- **Time:** O(n)
+- **Space:** O(1)
+
+### Status
+
+✅ Completed — Solved
