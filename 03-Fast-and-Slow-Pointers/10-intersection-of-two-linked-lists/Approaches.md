@@ -176,3 +176,162 @@ The key pattern is:
     -> switch to the other list
     -> both pointers travel equal total distance
     -> meet at intersection
+
+--------------------------------------------------------------------------------
+
+x# Approach 02 — Two Pointers: Length Difference Alignment
+
+## Idea
+
+Find the lengths of both linked lists first.
+
+If the lists have different lengths, move the pointer of the longer list forward by the length difference.
+
+After that, both pointers are the same distance from the end.
+
+Then move both pointers one step at a time.
+
+The first point where:
+
+    currA == currB
+
+is the intersection node.
+
+If there is no intersection, both pointers eventually become `null`.
+
+---
+
+## Steps
+
+### Step 1 — Find Length of List A
+
+    while (currA != null) {
+        currA = currA.next;
+        m++;
+    }
+
+### Step 2 — Find Length of List B
+
+    while (currB != null) {
+        currB = currB.next;
+        n++;
+    }
+
+### Step 3 — Reset Both Pointers
+
+After calculating the lengths, both pointers are `null`.
+
+Reset them:
+
+    currA = headA;
+    currB = headB;
+
+### Step 4 — Align the Pointers
+
+If List A is longer:
+
+    skipA = m - n
+
+Move `currA` forward by `skipA` nodes.
+
+If List B is longer:
+
+    skipB = n - m
+
+Move `currB` forward by `skipB` nodes.
+
+Now both pointers have the same number of nodes remaining until the end.
+
+### Step 5 — Find Intersection
+
+Move both pointers together:
+
+    while (currA != null) {
+
+        if (currA == currB) {
+            return currA;
+        }
+
+        currA = currA.next;
+        currB = currB.next;
+    }
+
+If they never meet, return:
+
+    null
+
+---
+
+## Example
+
+    List A:
+
+    1 -> 2 -> 3 -> 6 -> 7
+
+    List B:
+
+    4 -> 5 -> 6 -> 7
+
+Lengths:
+
+    A = 5
+    B = 4
+
+Difference:
+
+    5 - 4 = 1
+
+Move List A pointer one step forward.
+
+Now:
+
+    currA -> 2
+    currB -> 4
+
+Both pointers now have the same number of nodes remaining.
+
+Move them together:
+
+    2 -> 3 -> 6 -> 7
+    4 -> 5 -> 6 -> 7
+
+They meet at:
+
+    6
+
+Therefore:
+
+    return currA
+
+---
+
+## Important Point
+
+Use:
+
+    currA == currB
+
+Do not compare:
+
+    currA.data == currB.data
+
+Two different nodes can contain the same value but are not an intersection.
+
+---
+
+## Complexity
+
+- Time: O(n + m)
+- Space: O(1)
+
+---
+
+## Java File
+
+    _02_TwoPointers.java
+
+---
+
+## Status
+
+✅ Solved
