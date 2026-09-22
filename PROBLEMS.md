@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 23 / 500+**
+**Completed: 24 / 500+**
 
 ---
 
@@ -36,4 +36,6 @@
 - [x] P004 — LeetCode #287 — Find Duplicate Number — ✅ DONE
 - [x] P005 — LeetCode #202 — Happy Number — ✅ DONE
 - [x] P006 — LeetCode #234 — Palindrome Linked List — ✅ DONE
-- [x] P007 — LeetCode #143 — Rearrange a LinkedList — ✅ DONE
+- [x] P007 — LeetCode #143 — Reorder List — ✅ DONE
+- [ ] P008 — LeetCode #457 — Circular Array Loop — ⏸️ SKIPPED
+- [x] P009 — LeetCode #19 — Remove Nth Node From End of List — ✅ DONE
