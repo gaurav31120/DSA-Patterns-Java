@@ -84,3 +84,90 @@ to:
 
     Time: O(n)
     Space: O(n)
+
+-----------------------------------------------------------------------------
+
+# Approach 02 — Two Pass
+
+- **Status:** Solved
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(1)
+- **Priority:** OPTIONAL
+
+## Idea
+
+Use two traversals.
+
+### Pass 1
+
+Traverse the linked list and calculate its total length.
+
+### Pass 2
+
+Convert the `nth` position from the end into an index from the beginning:
+
+    index = length - n
+
+Then move to the node immediately before the target and remove it.
+
+## Steps
+
+1. Traverse the list and calculate `length`.
+2. If `n == length`, the head must be removed.
+3. Otherwise calculate:
+
+       index = length - n
+
+4. Start again from `head`.
+5. Move to the node before the target.
+6. Remove the target using:
+
+       curr.next = curr.next.next
+
+7. Return `head`.
+
+## Example
+
+    head = [1,2,3,4,5]
+    n = 2
+
+Length:
+
+    5
+
+Target index:
+
+    5 - 2 = 3
+
+Index `3` contains:
+
+    4
+
+The node before it is:
+
+    3
+
+Remove it:
+
+    3.next = 5
+
+Result:
+
+    [1,2,3,5]
+
+## Important Point
+
+If:
+
+    n == length
+
+then the target is the head.
+
+So return:
+
+    head.next
+
+## Complexity
+
+    Time: O(n)
+    Space: O(1)
