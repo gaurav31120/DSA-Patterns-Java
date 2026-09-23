@@ -190,3 +190,171 @@ Result:
 ## Status
 
 ✅ Solved
+
+--------------------------------------------------------
+
+# Approach 02 — Fast & Slow Pointers
+
+## Idea
+
+Use two pointers:
+
+- `slow` moves one node at a time.
+- `fast` moves two nodes at a time.
+
+The goal is to make `slow` reach the node just before the middle node.
+
+Then we remove the middle node by changing the previous node's `next`.
+
+---
+
+## Steps
+
+### Step 1 — Handle Small Lists
+
+If the list is empty or contains only one node:
+
+    if (head == null || head.next == null) {
+        return null;
+    }
+
+For a single-node list, that node itself is the middle node and must be deleted.
+
+---
+
+### Step 2 — Initialize Pointers
+
+Using a dummy node:
+
+    dummy -> head
+
+Initialize:
+
+    Node slow = dummy;
+    Node fast = dummy;
+
+The dummy node allows the same deletion logic to work for all valid list sizes.
+
+---
+
+### Step 3 — Move the Pointers
+
+Move `slow` one step and `fast` two steps:
+
+    while (fast.next != null && fast.next.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+When the loop ends, `slow` is positioned immediately before the middle node.
+
+---
+
+### Step 4 — Delete the Middle Node
+
+Skip the middle node:
+
+    slow.next = slow.next.next;
+
+For:
+
+    1 -> 2 -> 3 -> 4
+
+`slow` reaches node `2`.
+
+So:
+
+    slow.next = slow.next.next;
+
+changes:
+
+    2 -> 3 -> 4
+
+into:
+
+    2 -> 4
+
+Result:
+
+    1 -> 2 -> 4
+
+---
+
+## Odd-Length Example
+
+Input:
+
+    1 -> 2 -> 3 -> 4 -> 5
+
+The middle node is:
+
+    3
+
+The algorithm positions `slow` at:
+
+    2
+
+Then:
+
+    slow.next = slow.next.next;
+
+Result:
+
+    1 -> 2 -> 4 -> 5
+
+---
+
+## Even-Length Example
+
+Input:
+
+    1 -> 2 -> 3 -> 4
+
+There are two middle nodes:
+
+    2, 3
+
+The problem requires deleting the second middle:
+
+    3
+
+The algorithm positions `slow` at:
+
+    2
+
+Then:
+
+    slow.next = slow.next.next;
+
+Result:
+
+    1 -> 2 -> 4
+
+---
+
+## Why Fast & Slow Works
+
+`fast` moves twice as quickly as `slow`.
+
+Therefore, when `fast` reaches the end of the list, `slow` has reached the middle area.
+
+Using the dummy node makes `slow` stop at the node immediately before the middle, which allows direct deletion.
+
+---
+
+## Complexity
+
+- Time: O(n)
+- Space: O(1)
+
+---
+
+## Java File
+
+    _02_FastSlowPointers.java
+
+---
+
+## Status
+
+✅ Solved
