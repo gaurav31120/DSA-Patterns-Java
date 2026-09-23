@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 28 / 500+**
+**Completed: 29 / 500+**
 
 ---
 
@@ -43,3 +43,4 @@
 - [x] P011 — LeetCode #725 — Split Linked List in Parts — ✅ DONE
 - [x] P012 — LeetCode #2095 — Delete the Middle Node of a Linked List — ✅ DONE
 - [x] P013 — LeetCode #2130 — Maximum Twin Sum of a Linked List — ✅ DONE
+- [x] P014 — LeetCode #1721 — Swapping Nodes in a Linked List — ✅ DONE
