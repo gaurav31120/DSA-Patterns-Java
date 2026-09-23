@@ -2,19 +2,19 @@
 
 ## Progress
 
-**Completed: 25 / 500+**
+**Completed: 26 / 500+**
 
 ---
 
 ## 01 — Two Pointers
 
-- [x] P001 — Two Sum ✅ DONE
-- [x] P002 — Remove Duplicates ✅ DONE
-- [x] P003 — Squares of a Sorted Array ✅ DONE
-- [x] P004 — Triplet Sum to Zero ✅ DONE
-- [x] P005 — Triplets Sum Closest to Target ✅ DONE
-- [x] P006 — Triplets with Smaller Sum ✅ DONE
-- [x] P007 — Dutch National Flag ✅ DONE
+- [x] P001 — LeetCode #1 — Two Sum — ✅ DONE
+- [x] P002 — LeetCode #26 — Remove Duplicates — ✅ DONE
+- [x] P003 — LeetCode #977 — Squares of a Sorted Array — ✅ DONE
+- [x] P004 — LeetCode #15 — Triplet Sum to Zero — ✅ DONE
+- [x] P005 — LeetCode #16 — Triplets Sum Closest to Target — ✅ DONE
+- [x] P006 — Triplets with Smaller Sum — ✅ DONE
+- [x] P007 — LeetCode #75 — Dutch National Flag — ✅ DONE
 - [x] P008 — LeetCode #713 — Subarrays with Product Less than a Target — ✅ DONE
 - [x] P009 — LeetCode #18 — Quadruple Sum to Target — ✅ DONE
 - [x] P013 — LeetCode #167 — Two Sum II - Input Array Is Sorted — ✅ DONE
@@ -26,7 +26,7 @@
 ## 02 — Sliding Window
 
 - [x] P001 — Maximum Sum Subarray of Size K — ✅ DONE
-- [x] P002 — Smallest Subarray with a Given Sum — ✅ DONE
+- [x] P002 — LeetCode #209 — Smallest Subarray with a Given Sum — ✅ DONE
 
 ## 03 — Fast & Slow Pointers
 
@@ -40,3 +40,4 @@
 - [ ] P008 — LeetCode #457 — Cycle in a Circular Array — ⏸️ SKIPPED
 - [x] P009 — LeetCode #19 — Remove Nth Node From End of List — ✅ DONE
 - [x] P010 — LeetCode #160 — Intersection of Two Linked Lists — ✅ DONE
+- [x] P011 — LeetCode #725 — Split Linked List in Parts — ✅ DONE
