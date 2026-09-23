@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 27 / 500+**
+**Completed: 28 / 500+**
 
 ---
 
@@ -42,3 +42,4 @@
 - [x] P010 — LeetCode #160 — Intersection of Two Linked Lists — ✅ DONE
 - [x] P011 — LeetCode #725 — Split Linked List in Parts — ✅ DONE
 - [x] P012 — LeetCode #2095 — Delete the Middle Node of a Linked List — ✅ DONE
+- [x] P013 — LeetCode #2130 — Maximum Twin Sum of a Linked List — ✅ DONE
