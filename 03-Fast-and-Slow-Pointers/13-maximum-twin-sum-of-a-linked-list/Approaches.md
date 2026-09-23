@@ -148,3 +148,176 @@ We do not compare adjacent nodes.
 ## Status
 
 ✅ Solved
+
+----------------------------------------------------------------------------
+
+# Approach 02 — Fast & Slow Pointers + Reverse Second Half
+
+## Idea
+
+A linked list cannot move backward, but twin nodes need to be compared from opposite ends.
+
+For example:
+
+    5 -> 4 -> 2 -> 1
+
+Twin pairs are:
+
+    5 <-> 1
+    4 <-> 2
+
+To compare these pairs efficiently:
+
+1. Find the beginning of the second half using Fast & Slow Pointers.
+2. Reverse the second half.
+3. Compare the first half with the reversed second half.
+4. Keep track of the maximum twin sum.
+
+---
+
+## Step 1 — Find the Second Half
+
+Initialize:
+
+    slow = head
+    fast = head
+
+Move:
+
+    slow -> 1 node
+    fast -> 2 nodes
+
+using:
+
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+For:
+
+    5 -> 4 -> 2 -> 1
+
+`slow` reaches:
+
+    2
+
+So the list is divided into:
+
+    First half:
+    5 -> 4
+
+    Second half:
+    2 -> 1
+
+---
+
+## Step 2 — Reverse the Second Half
+
+Reverse:
+
+    2 -> 1
+
+into:
+
+    1 -> 2
+
+Use the standard linked-list reversal:
+
+    prev
+    curr
+    next
+
+After reversal:
+
+    First half:
+    5 -> 4
+
+    Reversed second half:
+    1 -> 2
+
+---
+
+## Step 3 — Compare Twin Nodes
+
+Initialize:
+
+    first = head
+    second = reversed second half
+
+Now calculate:
+
+    first.data + second.data
+
+For the example:
+
+    5 + 1 = 6
+    4 + 2 = 6
+
+Maximum:
+
+    6
+
+---
+
+## Example
+
+Input:
+
+    5 -> 4 -> 2 -> 1
+
+Find second half:
+
+    5 -> 4 | 2 -> 1
+
+Reverse second half:
+
+    5 -> 4 | 1 -> 2
+
+Compare:
+
+    5 + 1 = 6
+    4 + 2 = 6
+
+Output:
+
+    6
+
+---
+
+## Why This Works
+
+The second half is reversed so that the last node of the original list becomes the first node of the reversed half.
+
+Therefore:
+
+    first node of first half
+                +
+    first node of reversed second half
+
+represents a twin pair.
+
+The same process continues for every twin pair.
+
+---
+
+## Complexity
+
+- Time: O(n)
+- Space: O(1)
+
+The linked list is traversed a constant number of times.
+
+No ArrayList or additional data structure is required.
+
+---
+
+## Java File
+
+    _02_FastSlowReverse.java
+
+---
+
+## Status
+
+✅ Solved
