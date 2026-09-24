@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 31 / 500+**
+**Completed: 32 / 500+**
 
 ---
 
@@ -23,6 +23,7 @@
 - [x] P016 — LeetCode #27 — Remove Element — ✅ DONE
 - [x] P017 — LeetCode #392 — Is Subsequence — ✅ DONE
 - [x] P018 — LeetCode #88 — Merge Sorted Array — ✅ DONE
+- [ ] P019 — LeetCode #350 — Intersection of Two Arrays II — ⏸️ PARKED
 
 ## 02 — Sliding Window
 
@@ -47,3 +48,7 @@
 - [x] P014 — LeetCode #1721 — Swapping Nodes in a Linked List — ✅ DONE
 - [x] P015 — LeetCode #328 — Odd Even Linked List — ✅ DONE
 - [ ] P016 — LeetCode #148 — Sort List — ⏸️ PARKED
+
+## 09 — Hash Maps
+
+- [x] P001 — LeetCode #387 — First Non-repeating Character — ✅ DONE
