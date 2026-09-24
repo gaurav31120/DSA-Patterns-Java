@@ -207,3 +207,204 @@ Result:
 ## Status
 
 ✅ Solved
+
+----------------------------------------------------------------
+
+# Approach 02 — Backward Two Pointers
+
+## Idea
+
+Merge the two sorted arrays directly inside `arr1`.
+
+The challenge is that `arr1` already contains its valid elements at the beginning.
+
+If we merge from the beginning, we may overwrite elements of `arr1` that we still need.
+
+So we merge from the **end**.
+
+Use three pointers:
+
+    i -> last valid element of arr1
+    j -> last element of arr2
+    k -> last position of arr1
+
+For example:
+
+    arr1 = [1, 2, 3, 0, 0, 0]
+    arr2 = [2, 5, 6]
+
+Initial:
+
+    i = 2
+    j = 2
+    k = 5
+
+---
+
+## Step 1 — Initialize Pointers
+
+    int i = m - 1;
+    int j = n - 1;
+    int k = m + n - 1;
+
+Here:
+
+    i points to the last valid value of arr1.
+    j points to the last value of arr2.
+    k points to the last available position in arr1.
+
+---
+
+## Step 2 — Compare From the End
+
+Compare:
+
+    arr1[i]
+    arr2[j]
+
+Place the larger value at:
+
+    arr1[k]
+
+For example:
+
+    arr1[i] = 3
+    arr2[j] = 6
+
+Since `6` is larger:
+
+    arr1[k] = 6
+
+Then move:
+
+    j--
+    k--
+
+---
+
+## Step 3 — Continue Backwards
+
+Continue while both arrays still have valid elements:
+
+    while (i >= 0 && j >= 0)
+
+For:
+
+    arr1 = [1, 2, 3, 0, 0, 0]
+    arr2 = [2, 5, 6]
+
+The process is:
+
+    3 vs 6 -> place 6
+    3 vs 5 -> place 5
+    3 vs 2 -> place 3
+    2 vs 2 -> place 2
+    1 vs 2 -> place 2
+
+Result:
+
+    [1, 2, 2, 3, 5, 6]
+
+---
+
+## Step 4 — Copy Remaining arr2 Elements
+
+If elements are still left in `arr2`, copy them:
+
+    while (j >= 0) {
+        arr1[k] = arr2[j];
+        j--;
+        k--;
+    }
+
+---
+
+## Why No Remaining arr1 Loop?
+
+If `arr2` becomes empty first, the remaining elements of `arr1` are already in the correct positions.
+
+Therefore, no additional work is required for the remaining `arr1` elements.
+
+---
+
+## Why Do We Merge Backwards?
+
+Suppose:
+
+    arr1 = [1, 2, 3, 0, 0, 0]
+    arr2 = [2, 5, 6]
+
+If we merge from the beginning, writing into `arr1` could overwrite `2` or `3` before we use them.
+
+By starting from the end, the empty positions are used first.
+
+Therefore, no required values are overwritten.
+
+---
+
+## Important Point
+
+We compare the largest remaining elements first.
+
+So the pointer movement is:
+
+    larger element -> arr1[k]
+    move that pointer
+    k--
+
+This continues until all values are placed.
+
+---
+
+## Edge Cases
+
+### n = 0
+
+Nothing needs to be merged.
+
+The existing valid elements of `arr1` are already sorted.
+
+### m = 0
+
+All elements come from `arr2`.
+
+Example:
+
+    arr1 = [0]
+    arr2 = [1]
+
+Result:
+
+    [1]
+
+### Duplicate Values
+
+Equal values are handled correctly.
+
+Example:
+
+    arr1 = [1, 2, 3, 0, 0, 0]
+    arr2 = [2, 5, 6]
+
+Result:
+
+    [1, 2, 2, 3, 5, 6]
+
+---
+
+## Complexity
+
+- Time: O(m + n)
+- Space: O(1)
+
+---
+
+## Java File
+
+    _02_BackwardTwoPointers.java
+
+---
+
+## Status
+
+✅ Solved
