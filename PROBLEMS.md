@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 30 / 500+**
+**Completed: 31 / 500+**
 
 ---
 
@@ -22,6 +22,7 @@
 - [x] P015 — LeetCode #42 — Trapping Rain Water — ✅ DONE
 - [x] P016 — LeetCode #27 — Remove Element — ✅ DONE
 - [x] P017 — LeetCode #392 — Is Subsequence — ✅ DONE
+- [x] P018 — LeetCode #88 — Merge Sorted Array — ✅ DONE
 
 ## 02 — Sliding Window
 
@@ -45,3 +46,4 @@
 - [x] P013 — LeetCode #2130 — Maximum Twin Sum of a Linked List — ✅ DONE
 - [x] P014 — LeetCode #1721 — Swapping Nodes in a Linked List — ✅ DONE
 - [x] P015 — LeetCode #328 — Odd Even Linked List — ✅ DONE
+- [ ] P016 — LeetCode #148 — Sort List — ⏸️ PARKED
