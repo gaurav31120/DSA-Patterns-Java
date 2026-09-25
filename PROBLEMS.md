@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 33 / 500+**
+**Completed: 34 / 500+**
 
 ---
 
@@ -59,3 +59,4 @@
 
 - [x] P001 — LeetCode #387 — First Non-repeating Character — ✅ DONE
 - [x] P002 — LeetCode #1189 — Maximum Number of Balloons — ✅ DONE
+- [x] P003 — LeetCode #409 — Longest Palindrome — ✅ DONE
