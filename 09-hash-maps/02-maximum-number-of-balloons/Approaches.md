@@ -109,25 +109,111 @@ For `balloon`:
     o → count / 2
 
 ---
+# P002 — Maximum Number of Balloons
 
-## Approach 02 — Count Array + Minimum Required Frequency
+## Approach 01 — Frequency Map
 
 ### Idea
 
-Since the required characters come from a small fixed character set, we can replace the `HashMap` with a fixed-size count array.
+Count the frequency of each character using a `HashMap`.
 
-For lowercase English letters:
+The word `balloon` requires:
+
+    b → 1
+    a → 1
+    l → 2
+    o → 2
+    n → 1
+
+So calculate how many balloons each required character can support and take the minimum.
+
+### Complexity
+
+- Time: O(n)
+- Space: O(k)
+
+---
+
+## Approach 02 — Count Array
+
+### Idea
+
+Use a fixed-size frequency array instead of a `HashMap`.
+
+Since the input contains lowercase English letters, use:
+
+    int[26]
+
+Character mapping:
 
     'a' → 0
     'b' → 1
     ...
     'z' → 25
 
-The frequency is stored using:
+The index is calculated using:
 
-    freq[ch - 'a']
+    ch - 'a'
 
-Then use the same minimum-frequency logic from Approach 01.
+### Steps
+
+1. Create a frequency array of size 26.
+2. Traverse the string and count each character.
+3. Get the counts of `b`, `a`, `l`, `o`, and `n`.
+4. Divide the counts of `l` and `o` by 2.
+5. Take the minimum of all five values.
+
+### Example
+
+Input:
+
+    "nlaebolko"
+
+Relevant counts:
+
+    b → 1
+    a → 1
+    l → 1
+    o → 1
+    n → 1
+
+For `balloon`:
+
+    b → 1
+    a → 1
+    l → 1 / 2 = 0
+    o → 1 / 2 = 0
+    n → 1
+
+Therefore:
+
+    answer = 0
+
+### Java Implementation
+
+    public class _02_CountArray {
+
+        // Time: O(n)
+        // Space: O(1)
+
+        static int maxBalloons(String text) {
+
+            int[] freq = new int[26];
+
+            for (char ch : text.toCharArray()) {
+                freq[ch - 'a']++;
+            }
+
+            int result = freq['b' - 'a'];
+
+            result = Math.min(result, freq['a' - 'a']);
+            result = Math.min(result, freq['l' - 'a'] / 2);
+            result = Math.min(result, freq['o' - 'a'] / 2);
+            result = Math.min(result, freq['n' - 'a']);
+
+            return result;
+        }
+    }
 
 ### Complexity
 
@@ -136,8 +222,9 @@ Then use the same minimum-frequency logic from Approach 01.
 
 ### Key Learning
 
-Use a count array when the possible character/value range is small and fixed.
+A fixed-size count array can replace a `HashMap` when the possible characters come from a small known range.
 
-The algorithmic idea remains the same:
+For `balloon`, `l` and `o` require two occurrences, so:
 
-    count → calculate capacity → take minimum
+    count(l) / 2
+    count(o) / 2
