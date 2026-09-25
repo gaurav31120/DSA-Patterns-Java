@@ -3,6 +3,37 @@
 
 public class _02_CountArray {
 
+    // static int longestPalindrome(String text) {
+    //     int n = text.length();
+
+    //     int[] freq = new int[52];
+
+    //     for (char ch : text.toCharArray()) {
+    //         freq[ch - 'a']++;
+    //     }
+
+    //     int count = 0;
+    //     boolean oddLength = false;
+
+    //     for (int i = 0; i < 26; i++) {
+    //         int charCount = freq[i];
+    //         if (charCount % 2 == 0) {
+    //             count = count + charCount;
+    //         } else {
+    //             oddLength = true;
+    //             count = count + charCount - 1;
+    //         }
+
+    //     }
+
+    //     if (oddLength) {
+    //         return count++;
+    //     } else {
+    //         count++;
+    //         return count;
+    //     }
+    // }
+
     static int longestPalindrome(String text) {
 
         int[] characterFrequency = new int[52];
