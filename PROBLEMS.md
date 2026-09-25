@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 32 / 500+**
+**Completed: 33 / 500+**
 
 ---
 
@@ -25,10 +25,14 @@
 - [x] P018 — LeetCode #88 — Merge Sorted Array — ✅ DONE
 - [ ] P019 — LeetCode #350 — Intersection of Two Arrays II — ⏸️ PARKED
 
+---
+
 ## 02 — Sliding Window
 
 - [x] P001 — Maximum Sum Subarray of Size K — ✅ DONE
 - [x] P002 — LeetCode #209 — Smallest Subarray with a Given Sum — ✅ DONE
+
+---
 
 ## 03 — Fast & Slow Pointers
 
@@ -49,6 +53,9 @@
 - [x] P015 — LeetCode #328 — Odd Even Linked List — ✅ DONE
 - [ ] P016 — LeetCode #148 — Sort List — ⏸️ PARKED
 
+---
+
 ## 09 — Hash Maps
 
 - [x] P001 — LeetCode #387 — First Non-repeating Character — ✅ DONE
+- [x] P002 — LeetCode #1189 — Maximum Number of Balloons — ✅ DONE
