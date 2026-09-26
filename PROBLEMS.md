@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 35 / 500+**
+**Completed: 36 / 500+**
 
 ---
 
@@ -61,3 +61,4 @@
 - [x] P002 — LeetCode #1189 — Maximum Number of Balloons — ✅ DONE
 - [x] P003 — LeetCode #409 — Longest Palindrome — ✅ DONE
 - [x] P004 — LeetCode #383 — Ransom Note — ✅ DONE
+- [x] P005 — LeetCode #49 — Group Anagrams — ✅ DONE
