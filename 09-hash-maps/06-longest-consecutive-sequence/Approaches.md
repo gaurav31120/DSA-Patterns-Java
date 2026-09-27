@@ -181,3 +181,161 @@ The important pattern is:
     expand forward
        ↓
     update longest length
+
+    -----------------------------------
+
+## Approach 02 — Sorting
+
+### Idea
+
+Sort the array so that consecutive values appear next to each other.
+
+Then scan the sorted array once.
+
+Maintain:
+
+    currentLength
+
+for the sequence currently being processed.
+
+Maintain:
+
+    longestLength
+
+for the longest sequence found so far.
+
+### Steps
+
+1. Handle the empty array.
+2. Sort the array.
+3. Start `currentLength` and `longestLength` with `1`.
+4. Compare each element with the previous element.
+5. If they are duplicates, ignore the duplicate.
+6. If the current number is exactly one greater than the previous number,
+   increase `currentLength`.
+7. Otherwise, start a new sequence with `currentLength = 1`.
+8. Update `longestLength`.
+
+### Example
+
+Input:
+
+    [100, 4, 200, 1, 3, 2]
+
+After sorting:
+
+    [1, 2, 3, 4, 100, 200]
+
+Processing:
+
+    1 → start sequence
+    2 → consecutive → length 2
+    3 → consecutive → length 3
+    4 → consecutive → length 4
+    100 → new sequence → length 1
+    200 → new sequence → length 1
+
+Answer:
+
+    4
+
+### Duplicate Example
+
+Input:
+
+    [1, 2, 2, 3]
+
+After sorting:
+
+    [1, 2, 2, 3]
+
+Processing:
+
+    1 → start sequence
+    2 → consecutive → length 2
+    2 → duplicate → ignore
+    3 → consecutive → length 3
+
+Answer:
+
+    3
+
+### Java Implementation
+
+    // Time Complexity: O(n log n)
+    // Space Complexity: O(1) auxiliary space
+
+    import java.util.Arrays;
+
+    public class _02_Sorting {
+
+        static int longestConsecutive(int[] arr) {
+
+            if (arr.length == 0) {
+                return 0;
+            }
+
+            Arrays.sort(arr);
+
+            int currentLength = 1;
+            int longestLength = 1;
+
+            for (int i = 1; i < arr.length; i++) {
+
+                if (arr[i] == arr[i - 1]) {
+                    continue;
+                }
+
+                if (arr[i] == arr[i - 1] + 1) {
+                    currentLength++;
+                } else {
+                    currentLength = 1;
+                }
+
+                if (currentLength > longestLength) {
+                    longestLength = currentLength;
+                }
+            }
+
+            return longestLength;
+        }
+
+        public static void main(String[] args) {
+
+            int[] arr = {
+                    100, 4, 200, 1, 3, 2
+            };
+
+            int result = longestConsecutive(arr);
+
+            System.out.println(
+                    "Longest consecutive sequence length: " + result
+            );
+
+            // Expected Output:
+            // Longest consecutive sequence length: 4
+        }
+    }
+
+### Complexity
+
+- Time Complexity: O(n log n)
+- Space Complexity: O(1) auxiliary space
+
+### Key Learning
+
+After sorting, use one pointer to scan the array.
+
+Track:
+
+    currentLength
+    longestLength
+
+The three cases are:
+
+    duplicate      → ignore
+    consecutive    → currentLength++
+    not consecutive → currentLength = 1
+
+The important idea is to track the length of the current consecutive
+sequence rather than counting all consecutive pairs in the array.
