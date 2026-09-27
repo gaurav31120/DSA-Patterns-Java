@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 38 / 500+**
+**Completed: 39 / 500+**
 
 ---
 
@@ -58,6 +58,8 @@
 ## 07 — In-Place Reversal of a LinkedList
 
 - [x] P001 — LeetCode #206 — Reverse a Linked List — ✅ DONE
+- [x] P002 — LeetCode #92 — Reverse a Sub-list — ✅ DONE
+
 ---
 
 ## 09 — Hash Maps
@@ -68,4 +70,3 @@
 - [x] P004 — LeetCode #383 — Ransom Note — ✅ DONE
 - [x] P005 — LeetCode #49 — Group Anagrams — ✅ DONE
 - [x] P006 — LeetCode #128 — Longest Consecutive Sequence — ✅ DONE
-- [ ] P007 — LeetCode #36 — Valid Sudoku
