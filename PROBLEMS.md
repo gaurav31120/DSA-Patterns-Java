@@ -2,7 +2,7 @@
 
 ## Progress
 
-**Completed: 36 / 500+**
+**Completed: 37 / 500+**
 
 ---
 
@@ -62,3 +62,4 @@
 - [x] P003 — LeetCode #409 — Longest Palindrome — ✅ DONE
 - [x] P004 — LeetCode #383 — Ransom Note — ✅ DONE
 - [x] P005 — LeetCode #49 — Group Anagrams — ✅ DONE
+- [x] P006 — LeetCode #128 — Longest Consecutive Sequence — ✅ DONE
